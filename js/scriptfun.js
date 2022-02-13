@@ -301,7 +301,8 @@ function resetFun() {
     agoefffun = document.getElementById("agoefffunslider").value = document.getElementById("agoefffunslider").defaultValue;
     agodenfun = document.getElementById("agodenfunslider").value = document.getElementById("agodenfunslider").defaultValue;
     agoefficfun = document.getElementById("agoefficifunslider").value = document.getElementById("agoefficifunslider").defaultValue;
-
+    graphRemoveAlert("funalert");
+    Plotly.restyle("functional", "visible", true);
     //updates lines concentration
     document.getElementById("funline2").value = document.getElementById("funline2").defaultValue;
     document.getElementById("funline3").value = document.getElementById("funline3").defaultValue;
@@ -387,8 +388,8 @@ function calcLinesFun(affinity, efficacy, recepDensity, efficiency, agoaffinity,
     }
     return data;
 }
-var markercolors = ['rgb(225,225,225)','rgb(255,215,55)', 'rgb(0,255,0)', 'rgb(255,0,0)', 'rgb(0,0,255)'];
-var linecolours = ['rgb(0,0,0)','rgb(255,215,55)', 'rgb(0,255,0)', 'rgb(255,0,0)', 'rgb(0,0,255)'];
+var markercolors = ['rgb(225,225,225)', 'rgb(255,215,55)', 'rgb(0,255,0)', 'rgb(255,0,0)', 'rgb(0,0,255)'];
+var linecolours = ['rgb(0,0,0)', 'rgb(255,215,55)', 'rgb(0,255,0)', 'rgb(255,0,0)', 'rgb(0,0,255)'];
 var linestyles = ["solid", "solid", "solid", "solid", "solid"];
 
 function plotGraphFun(chart) {
@@ -419,7 +420,7 @@ function plotGraphFun(chart) {
                 x: lineData[0],
                 y: lineData[1],
                 mode: "lines",
-                name: 0 + "nM",
+                name: "No antagonist",
                 line: {
                     color: linecolours[j],
                     width: 1
@@ -478,7 +479,7 @@ var questionsFun = ["What is the principal effect produced by a Functional Antag
     "What other factors might influence the actions of a Functional Antagonist on agonist-induced effects?<br><i>Test this using the Dose Response Visualiser.</i> ",
     "Can a Functional Antagonist abolish agonist-induced effects?<br><i>Test this using the Dose Response Visualiser.</i>"];
 
-var answersFun = ["Increasing concentrations of a functional antagonist may <b>REDUCE BOTH THE POTENCY AND THE MAXIMUM EFFECT OF THE AGONIST.</b>  That is, the functional antagonist may shift the agonist dose-response curve to the right (reduced agonist potency), while also suppressing the maximum agonist-induced response.  The extent to which agonist potency and maximum effect are reduced depends on the relative efficacies of the agonists, and the relative receptor densities (R<sub>T</sub>) and coupling efficiencies (<i>&#947</i>) of the respective receptor-effector systems within the cell. Test this using the Dose Response Visualiser.",
+var answersFun = ["Increasing concentrations of a functional antagonist may <b>REDUCE BOTH THE POTENCY AND THE MAXIMUM EFFECT OF THE AGONIST.</b>  That is, the functional antagonist may shift the agonist dose-response curve to the right (reduced agonist potency), while also suppressing the maximum agonist-induced response.  The extent to which agonist potency and maximum effect are reduced depends on the relative efficacies of the agonists, and the relative receptor densities (R<sub>T</sub>) and signal amplification (<i>&#947</i>) of the respective receptor-effector systems within the cell. Test this using the Dose Response Visualiser.",
     "<b>USUALLY</b>, although this will depend upon the relative efficacies of the agonist and functional antagonist, and the relative receptor densities (R<sub>T</sub>) and signal amplification (<i>&#947</i>) of their receptor-effector systems within the cell.  An instance where a functional antagonist may not suppress the maximum agonist-induced response might be where a high efficacy agonist acting in a cell with high R<sub>T</sub> and/or <i>&#947</i>, is acted upon by a functional antagonist that has low ε, and acting via a receptor-effector pathway with low R<sub>T</sub> and/or <i>&#947</i> – here the functional antagonist will likely shift the agonist dose-response curve to the right without suppressing the maximum effect. Test this using the Dose Response Visualiser.",
     "<b>YES</b>, the extent of the inhibitory effect produced by a functional antagonist depends on the intrinsic efficacy of the agonist, and the properties of the cell (R<sub>T</sub>, <i>&#947</i>). Test this using the Dose Response Visualiser.",
     "Clearly, the <b>CONCENTRATION</b> of the functional antagonist will impact the extent of inhibition of the agonist-induced response, although this will be limited because once the receptors for the functional allosteric site are saturated, there are no further inhibitory effects on the agonist. Test this using the Dose Response Visualiser.",

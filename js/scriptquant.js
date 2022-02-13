@@ -6,8 +6,8 @@ var efficcom = document.getElementById("efficicomslider").defaultValue;
 var agoaff = document.getElementById("agoaffnum").defaultValue;
 var agoafflog = document.getElementById("agoafflognum").defaultValue;
 var efflevelcom = document.getElementById("efflevelcom").defaultValue;
-document.getElementById("displayeffectcom").innerHTML = (efflevelcom * 89).toFixed(2);
-document.getElementById("efftablecom").innerHTML = (efflevelcom * 89).toFixed(2);
+document.getElementById("displayeffectcom").innerHTML = (efflevelcom * 89).toFixed(1);
+document.getElementById("efftablecom").innerHTML = (efflevelcom * 89).toFixed(1);
 
 var isPointValid = [true, true, true, true];
 var allmarkercolours = ['rgb(255,215,0)', 'rgb(0,255,0)', 'rgb(255,0,0)', 'rgb(0,0,255)'];
@@ -78,8 +78,8 @@ function resetQuant() {
     agoaff = document.getElementById("agoaffnum").value = document.getElementById("agoaffnum").defaultValue;
     agoafflog = document.getElementById("agoafflognum").value = document.getElementById("agoafflognum").defaultValue;
     efflevelcom = document.getElementById("efflevelcom").value = document.getElementById("efflevelcom").defaultValue;
-    document.getElementById("displayeffectcom").innerHTML = (efflevelcom *89).toFixed(2);
-    document.getElementById("efftablecom").innerHTML = (efflevelcom * 89).toFixed(2);
+    document.getElementById("displayeffectcom").innerHTML = (efflevelcom * 89).toFixed(1);
+    document.getElementById("efftablecom").innerHTML = (efflevelcom * 89).toFixed(1);
 
     antval0 = document.getElementById("ant0").value = document.getElementById("ant0").defaultValue;
     antval1 = document.getElementById("ant1").value = document.getElementById("ant1").defaultValue;
@@ -169,7 +169,7 @@ function updateAffinityCom(value) {
         lineData2 = calcLinesCom(affcom, effcom, dencom, efficcom, agoafflog, agoconcarr[2]);
         lineData3 = calcLinesCom(affcom, effcom, dencom, efficcom, agoafflog, agoconcarr[3]);
         lineData4 = calcLinesCom(affcom, effcom, dencom, efficcom, agoafflog, agoconcarr[4]);
-        findComHalfMaxEffect(lineData0);
+        //findComHalfMaxEffect(lineData0);
         halfData0 = calc50(lineData0);
         halfData1 = calc50(lineData1);
         halfData2 = calc50(lineData2);
@@ -207,7 +207,7 @@ function updateEfficacyCom(value) {
         lineData2 = calcLinesCom(affcom, effcom, dencom, efficcom, agoafflog, agoconcarr[2]);
         lineData3 = calcLinesCom(affcom, effcom, dencom, efficcom, agoafflog, agoconcarr[3]);
         lineData4 = calcLinesCom(affcom, effcom, dencom, efficcom, agoafflog, agoconcarr[4]);
-        findComHalfMaxEffect(lineData0);
+        //findComHalfMaxEffect(lineData0);
         halfData0 = calc50(lineData0);
         halfData1 = calc50(lineData1);
         halfData2 = calc50(lineData2);
@@ -245,7 +245,7 @@ function updateDensityCom(value) {
         lineData2 = calcLinesCom(affcom, effcom, dencom, efficcom, agoafflog, agoconcarr[2]);
         lineData3 = calcLinesCom(affcom, effcom, dencom, efficcom, agoafflog, agoconcarr[3]);
         lineData4 = calcLinesCom(affcom, effcom, dencom, efficcom, agoafflog, agoconcarr[4]);
-        findComHalfMaxEffect(lineData0);
+        //findComHalfMaxEffect(lineData0);
         halfData0 = calc50(lineData0);
         halfData1 = calc50(lineData1);
         halfData2 = calc50(lineData2);
@@ -283,7 +283,7 @@ function updateEfficiencyCom(value) {
         lineData2 = calcLinesCom(affcom, effcom, dencom, efficcom, agoafflog, agoconcarr[2]);
         lineData3 = calcLinesCom(affcom, effcom, dencom, efficcom, agoafflog, agoconcarr[3]);
         lineData4 = calcLinesCom(affcom, effcom, dencom, efficcom, agoafflog, agoconcarr[4]);
-        findComHalfMaxEffect(lineData0);
+        //findComHalfMaxEffect(lineData0);
         halfData0 = calc50(lineData0);
         halfData1 = calc50(lineData1);
         halfData2 = calc50(lineData2);
@@ -317,7 +317,7 @@ function updateAgoAffinity(value) {
     lineData2 = calcLinesCom(affcom, effcom, dencom, efficcom, agoafflog, agoconcarr[2]);
     lineData3 = calcLinesCom(affcom, effcom, dencom, efficcom, agoafflog, agoconcarr[3]);
     lineData4 = calcLinesCom(affcom, effcom, dencom, efficcom, agoafflog, agoconcarr[4]);
-    findComHalfMaxEffect(lineData0);
+    //findComHalfMaxEffect(lineData0);
     halfData0 = calc50(lineData0);
     halfData1 = calc50(lineData1);
     halfData2 = calc50(lineData2);
@@ -338,7 +338,6 @@ function updateAgoAffinity(value) {
     }, animation)
     schildData = calcSchild(agoconcarr[1], agoconcarr[2], agoconcarr[3], agoconcarr[4], logdr1, logdr2, logdr3, logdr4);
     Plotly.animate("schild", { data: [{ x: schildData[0], y: schildData[1] }], traces: [0], layout: {} }, animation)
-
 }
 
 function updateAgoAffinityLog(value) {
@@ -350,7 +349,7 @@ function updateAgoAffinityLog(value) {
     lineData2 = calcLinesCom(affcom, effcom, dencom, efficcom, agoafflog, agoconcarr[2]);
     lineData3 = calcLinesCom(affcom, effcom, dencom, efficcom, agoafflog, agoconcarr[3]);
     lineData4 = calcLinesCom(affcom, effcom, dencom, efficcom, agoafflog, agoconcarr[4]);
-    findComHalfMaxEffect(lineData0);
+    //findComHalfMaxEffect(lineData0);
     halfData0 = calc50(lineData0);
     halfData1 = calc50(lineData1);
     halfData2 = calc50(lineData2);
@@ -376,8 +375,8 @@ function updateAgoAffinityLog(value) {
 
 function updateefflevelCom(value) {
     efflevelcom = value;
-    document.getElementById("displayeffectcom").innerHTML = (efflevelcom * 89).toFixed(2);
-    document.getElementById("efftablecom").innerHTML = (efflevelcom * 89).toFixed(2);
+    document.getElementById("displayeffectcom").innerHTML = (efflevelcom * 89).toFixed(1);
+    document.getElementById("efftablecom").innerHTML = (efflevelcom *89).toFixed(1);
     if (checkSliderMinCom()) {
         Plotly.restyle("quantitative", 'visible', false)
         graphAlert("quantalert")
@@ -423,7 +422,7 @@ function updateAntagonist1(value) {
     lineData2 = calcLinesCom(affcom, effcom, dencom, efficcom, agoafflog, agoconcarr[2]);
     lineData3 = calcLinesCom(affcom, effcom, dencom, efficcom, agoafflog, agoconcarr[3]);
     lineData4 = calcLinesCom(affcom, effcom, dencom, efficcom, agoafflog, agoconcarr[4]);
-    findComHalfMaxEffect(lineData0);
+    //findComHalfMaxEffect(lineData0);
     halfData0 = calc50(lineData0);
     halfData1 = calc50(lineData1);
     halfData2 = calc50(lineData2);
@@ -456,7 +455,7 @@ function updateAntagonistLog1(value) {
     lineData2 = calcLinesCom(affcom, effcom, dencom, efficcom, agoafflog, agoconcarr[2]);
     lineData3 = calcLinesCom(affcom, effcom, dencom, efficcom, agoafflog, agoconcarr[3]);
     lineData4 = calcLinesCom(affcom, effcom, dencom, efficcom, agoafflog, agoconcarr[4]);
-    findComHalfMaxEffect(lineData0);
+    //findComHalfMaxEffect(lineData0);
     halfData0 = calc50(lineData0);
     halfData1 = calc50(lineData1);
     halfData2 = calc50(lineData2);
@@ -489,7 +488,7 @@ function updateAntagonist2(value) {
     lineData2 = calcLinesCom(affcom, effcom, dencom, efficcom, agoafflog, agoconcarr[2]);
     lineData3 = calcLinesCom(affcom, effcom, dencom, efficcom, agoafflog, agoconcarr[3]);
     lineData4 = calcLinesCom(affcom, effcom, dencom, efficcom, agoafflog, agoconcarr[4]);
-    findComHalfMaxEffect(lineData0);
+    //findComHalfMaxEffect(lineData0);
     halfData0 = calc50(lineData0);
     halfData1 = calc50(lineData1);
     halfData2 = calc50(lineData2);
@@ -522,7 +521,7 @@ function updateAntagonistLog2(value) {
     lineData2 = calcLinesCom(affcom, effcom, dencom, efficcom, agoafflog, agoconcarr[2]);
     lineData3 = calcLinesCom(affcom, effcom, dencom, efficcom, agoafflog, agoconcarr[3]);
     lineData4 = calcLinesCom(affcom, effcom, dencom, efficcom, agoafflog, agoconcarr[4]);
-    findComHalfMaxEffect(lineData0);
+    //findComHalfMaxEffect(lineData0);
     halfData0 = calc50(lineData0);
     halfData1 = calc50(lineData1);
     halfData2 = calc50(lineData2);
@@ -554,7 +553,7 @@ function updateAntagonist3(value) {
     lineData2 = calcLinesCom(affcom, effcom, dencom, efficcom, agoafflog, agoconcarr[2]);
     lineData3 = calcLinesCom(affcom, effcom, dencom, efficcom, agoafflog, agoconcarr[3]);
     lineData4 = calcLinesCom(affcom, effcom, dencom, efficcom, agoafflog, agoconcarr[4]);
-    findComHalfMaxEffect(lineData0);
+    //findComHalfMaxEffect(lineData0);
     halfData0 = calc50(lineData0);
     halfData1 = calc50(lineData1);
     halfData2 = calc50(lineData2);
@@ -586,7 +585,7 @@ function updateAntagonistLog3(value) {
     lineData2 = calcLinesCom(affcom, effcom, dencom, efficcom, agoafflog, agoconcarr[2]);
     lineData3 = calcLinesCom(affcom, effcom, dencom, efficcom, agoafflog, agoconcarr[3]);
     lineData4 = calcLinesCom(affcom, effcom, dencom, efficcom, agoafflog, agoconcarr[4]);
-    findComHalfMaxEffect(lineData0);
+    //findComHalfMaxEffect(lineData0);
     halfData0 = calc50(lineData0);
     halfData1 = calc50(lineData1);
     halfData2 = calc50(lineData2);
@@ -619,7 +618,7 @@ function updateAntagonist4(value) {
     lineData2 = calcLinesCom(affcom, effcom, dencom, efficcom, agoafflog, agoconcarr[2]);
     lineData3 = calcLinesCom(affcom, effcom, dencom, efficcom, agoafflog, agoconcarr[3]);
     lineData4 = calcLinesCom(affcom, effcom, dencom, efficcom, agoafflog, agoconcarr[4]);
-    findComHalfMaxEffect(lineData0);
+    //findComHalfMaxEffect(lineData0);
     halfData0 = calc50(lineData0);
     halfData1 = calc50(lineData1);
     halfData2 = calc50(lineData2);
@@ -651,7 +650,7 @@ function updateAntagonistLog4(value) {
     lineData2 = calcLinesCom(affcom, effcom, dencom, efficcom, agoafflog, agoconcarr[2]);
     lineData3 = calcLinesCom(affcom, effcom, dencom, efficcom, agoafflog, agoconcarr[3]);
     lineData4 = calcLinesCom(affcom, effcom, dencom, efficcom, agoafflog, agoconcarr[4]);
-    findComHalfMaxEffect(lineData0);
+    //findComHalfMaxEffect(lineData0);
     halfData0 = calc50(lineData0);
     halfData1 = calc50(lineData1);
     halfData2 = calc50(lineData2);
@@ -758,7 +757,6 @@ function calcLinesCom(affinity, efficacy, recepDensity, efficiency, agoaffinity,
     return data;
 }
 
-//var linecolours = ["#000000", "#ff99999", "#ff66666", "#ff33333", "#ff00000"]
 var linecolours = ['rgb(0,0,0)','rgb(255,215,55)', 'rgb(0,255,0)', 'rgb(255,0,0)', 'rgb(0,0,255)'];
 
 function plotGraphCom(chart) {
@@ -804,7 +802,6 @@ function plotGraphCom(chart) {
                 mode: "lines",
                 name: 10 ** agoconcarr[j] * 1000000000 + "nM",
                 line: {
-
                     color: linecolours[j],
                     width: 1.2,
                     dash: linestyles[j]
@@ -880,6 +877,7 @@ function updateValid(data0, data1, data2, data3) {
     var update = {
         marker :{
             color: markercolours,
+            size: dotsize,
         }
     };
     Plotly.restyle("schild", update, 0);
@@ -939,7 +937,11 @@ function plotSchild(chart) {
         },
         marker: {
             color: markercolours,
-            size: 7,
+            size: dotsize,
+            line: {
+                color: 'black',
+                width: 1
+            }
         }
     }
     data.push(trace1);
@@ -949,75 +951,91 @@ function plotSchild(chart) {
 
 plotSchild("schild");
 
-//Define a function to calculate real line properties for Shild Plot Property Table, this part still has some small issues need to be fixed.
+//Define a function to calculate actual plot properties for Shild Plot Property Table.
 function updateSchildPropertyTableCom(){
     //Get x values and y values.
-    var tableDataCom = calcSchild(antlogval1, antlogval2, antlogval3, antlogval4, logdr1, logdr2, logdr3, logdr4);
-    var xtableDataCom = tableDataCom[0];
-    var ytableDataCom = tableDataCom[1];
-
-    var numberofxCom = xtableDataCom.length;
-    var numberofyCom = ytableDataCom.length;
-    for (i = 0; i < numberofxCom; i++){
-        xtableDataCom[i] = Number(xtableDataCom[i]);
-        ytableDataCom[i] = Number(ytableDataCom[i]);
+    var tableData = calcSchild(antlogval1, antlogval2, antlogval3, antlogval4, logdr1, logdr2, logdr3, logdr4);
+    var tempxTableData = tableData[0];
+    var tempyTableData = tableData[1];
+    var tempNumberofx = tempxTableData.length;
+    for (i = 0; i < tempNumberofx; i++){
+        tempxTableData[i] = Number(tempxTableData[i]);
+        tempyTableData[i] = Number(tempyTableData[i]);
     }
 
-    var x1 = xtableDataCom[0];
-    var x2 = xtableDataCom[numberofxCom-1];
-    var y1 = ytableDataCom[0];
-    var y2 = ytableDataCom[numberofyCom-1]; 
-
-    if(isFinite(y1) == false){
-        document.getElementById("slopevaluecom").innerHTML = "NA";
+    //Check if there are any equal x values and remove duplicated one(s).
+    var x1 = tempxTableData[0];
+    var y1 = tempyTableData[0];
+    var xTableData = [x1];
+    var yTableData = [y1];
+    for (i = 1; i < tempNumberofx; i++){
+        if(xTableData[0] != tempxTableData[i]){
+            xTableData.push(tempxTableData[i]);
+            yTableData.push(tempyTableData[i]);
+        }
+    }
+    var numberofx = xTableData.length;
+    var numberofy = yTableData.length;
+    
+    /*
+    Calculate actual plot properties.
+    Note: There are some cases can't calculate actual plot properties, need to provide error messages.
+          1. There are multiple groups of coordinates with same x values and y values.
+    */
+    if(numberofx < 2){
+        document.getElementById("slopevaluecom").innerHTML = "NA"
         document.getElementById("pA2valuecom").innerHTML = "NA";
         document.getElementById("r2valuecom").innerHTML = "NA";
-        document.getElementById("notecom").innerHTML = "Note: Values are not avaliable (NA), becasue log(Dr-1) values are infinity.";
+        document.getElementById("notecom").innerHTML = "Note: Values are not avaliable (NA), becasue Schild Plot has no point or only one point - please try changing the properties of the agonist or antagonist, or the Level of Effect.";
     }
     else{
+        var x1Calc = xTableData[0];
+        var x2Calc = xTableData[numberofx - 1];
+        var y1Calc = yTableData[0];
+        var y2Calc = yTableData[numberofy - 1];
+
         //Calculate the slope.
-        var slopeValueCom = (y2 - y1) / (x2 - x1);
-        document.getElementById("slopevaluecom").innerHTML = slopeValueCom.toFixed(3);
+        var slopeValueCom = (y2Calc - y1Calc) / (x2Calc - x1Calc);
+        document.getElementById("slopevaluecom").innerHTML = slopeValueCom.toFixed(2);
 
         //Calculate pA2 (x-intercept).
-        var bCom = y1 - (slopeValueCom * x1);
-        var pA2ValueCom = (0 - bCom) / slopeValueCom;
-        document.getElementById("pA2valuecom").innerHTML = pA2ValueCom.toFixed(3);
+        var b = y1Calc - (slopeValueCom * x1Calc);
+        var pA2ValueCom = (0 - b) / slopeValueCom;
+        document.getElementById("pA2valuecom").innerHTML = pA2ValueCom.toFixed(2);
 
         //Calculate R square.
 
         //Calculate the mean of x and y.
-        var xtotal = 0;
-        var ytotal = 0;
-        for (var i = 0; i < numberofxCom; i++) {
-            xtotal += xtableDataCom[i];
-            ytotal += ytableDataCom[i];
+        var xTotal = 0;
+        var yTotal = 0;
+        for (var i = 0; i < numberofx; i++) {
+            xTotal += xTableData[i];
+            yTotal += yTableData[i];
         }
-        var xmean = xtotal/numberofxCom;
-        var ymean = ytotal/numberofyCom;
+        var xMean = xTotal/numberofx;
+        var yMean = yTotal/numberofy;
         
         //Calculate sum of regression.
         var regressionSum = 0;
-        for (var i = 0; i < numberofxCom; i++) {
-            regressionSum += (xtableDataCom[i] - xmean) * (ytableDataCom[i] - ymean);
+        for (var i = 0; i < numberofx; i++) {
+            regressionSum += (xTableData[i] - xMean) * (yTableData[i] - yMean);
         }
 
         //Calculate sum of total.
         var sumx2 = 0;
         var sumy2 = 0;
-        for (var i = 0; i < numberofxCom; i++) {
-            sumx2 += (xtableDataCom[i] - xmean) ** 2;
-            sumy2 += (ytableDataCom[i] - ymean) ** 2;
+        for (var i = 0; i < numberofx; i++) {
+            sumx2 += (xTableData[i] - xMean) ** 2;
+            sumy2 += (yTableData[i] - yMean) ** 2;
         }
         var totalSum = Math.sqrt(sumx2 * sumy2);
 
         //Calculate R square value.
         var rValue = regressionSum/totalSum;
         var r2ValueCom = rValue ** 2;
+        document.getElementById("r2valuecom").innerHTML = r2ValueCom.toFixed(2);
 
-        document.getElementById("r2valuecom").innerHTML = r2ValueCom.toFixed(3);
-
-        document.getElementById("notecom").innerHTML = "Note: Values are avaliable now.";
+        document.getElementById("notecom").innerHTML = "";
     }
     
 }
@@ -1066,12 +1084,12 @@ var answersSchild = ["The Schild analysis is particularly useful for the classif
 "<br><b>1.</b> The Schild plot should be linear.  In order to establish linearity, the Schild plot should be determined using 3 or more [antagonist].<br><b>2.</b> The Schild Plot should have a slope of unity (a slope that is not significantly different from one). ",
 "<b>NO</b>, the shape and position of the Schild Plot should be independent of agonist affinity or efficacy and cell R<sub>T</sub> or <i>&#947</i>.   Test this by changing the properties of the agonist and/or cell and observing the effect on the Schild plot.  This is one of the great advantages of the Schild Analysis.  ",
 "<br><b>1.</b> Use a range of different antagonists that display selectivity for the receptor subtypes.  For example, the characterisation of the M receptor subtype mediating a response may require the use of antagonists such as pirenzepine (M<sub>1</sub> receptor-selective), methoctramine (M<sub>2</sub>-selective), darifenacin (M<sub>3</sub>), MT-3 (M<sub>4</sub>) and S-secoverine (M<sub>5</sub>).<br><b>2.</b> Use a wide range of concentrations of the antagonists (at least 30-100 fold concentration range), ensuring that the lower concentrations used generate log(DR-1) values that are close to zero and thus more likely to provide a good estimate of the pA<sub>2</sub> value (less extrapolation to the x-axis required). This effect can be observed using the Schild Plot Generator.",
-"<br>Schild plots for a competitive antagonist may be non-ideal for many different reasons (see Non-Ideal Schild Plot page … provide link).  For example:<br><b>1.</b> If the antagonist (or agonist) produces <b>TOXICITY</b> at high concentrations then the Schild Plot will be nonlinear with slope > 1 at higher antagonist concentrations.<br><b>2.</b> If the <b>ANTAGONIST IS A SUBSTRATE OF A SATURABLE UPTAKE SYSTEM</b>, then the Schild plot will be nonlinear with a slope > 1.0 at low (non-saturating) antagonist concentrations.<br><b>3.</b> If the <b>AGONIST IS A SUBSTRATE OF A SATURABLE UPTAKE SYSTEM</b>, then the Schild plot will be nonlinear with a slope < 1.0 at low (non-saturating) agonist concentrations.<br><b>4.</b> If insufficient time is allowed for the antagonist to equilibrate with the receptor <b>(AGONIST-ANTAGONIST HEMI-EQUILIBRIA)</b>, then the Schild plot will be nonlinear with a slope < 1.0 at low antagonist concentrations.<br>",
-"<b>DAU-5884</b> has the highest affinity because it has the highest –logK<sub>i</sub> value at M<sub>1</sub> receptors (8.9). <br>Pirenzepine is the most selective for M<sub>1</sub> receptors because it has the greatest difference in –logK<sub>i</sub> values for M<sub>1</sub> compared to any other receptor subtype (at least 0.8 log units different).",
-"<b>S-secoverine</b> has the highest affinity because it has the highest –logK<sub>i</sub> value at M<sub>2</sub> receptors (7.9). <br>DAU-5884 is the most selective for M<sub>2</sub> receptors because it has the greatest difference in –logK<sub>i</sub> values for M<sub>2</sub> compared to any other receptor subtype (at least 1.0 log units different).",
-"<b>DAU-5884</b> has the highest affinity because it has the highest –logK<sub>i</sub> value at M<sub>3</sub> receptors (8.9). <br>Darifenacin is the most selective for M<sub>3</sub> receptors because it has the greatest difference in –logK<sub>i</sub> values for M<sub>3</sub> compared to any other receptor subtype (at least 0.8 log units different).",
-"<b>DAU-5884</b> has the highest affinity because it has the highest –logK<sub>i</sub> value at M<sub>4</sub> receptors (8.5). <br>MT-3 is the most selective for M<sub>4</sub> receptors because it has the greatest difference in –logK<sub>i</sub> values for M<sub>4</sub> compared to any other receptor subtype (at least 1.4 log units different).",
-"<b>DAU-5884</b> has the highest affinity because it has the highest –logK<sub>i</sub> value at M<sub>5</sub> receptors (8.1). <br>S-secoverine is the most selective for M<sub>5</sub> receptors because it has the greatest difference in –logK<sub>i</sub> values for M<sub>5</sub> compared to any other receptor subtype (at least 1.2 log units different).",
+"<br>Schild plots for a <b>competitive antagonist</b> may be non-ideal for many different reasons (see <a href=\"nonlinear.html\">Non-Ideal Schild Plot page</a>).  For example:<br><b>1.</b> If the antagonist (or agonist) produces <b>TOXICITY</b> at high concentrations then the Schild Plot will be nonlinear with slope > 1 at higher antagonist concentrations.<br><b>2.</b> If the <b>ANTAGONIST IS A SUBSTRATE OF A SATURABLE UPTAKE SYSTEM</b>, then the Schild plot will be nonlinear with a slope > 1.0 at low (non-saturating) antagonist concentrations.<br><b>3.</b> If the <b>AGONIST IS A SUBSTRATE OF A SATURABLE UPTAKE SYSTEM</b>, then the Schild plot will be nonlinear with a slope < 1.0 at low (non-saturating) agonist concentrations.<br><b>4.</b> If insufficient time is allowed for the antagonist to equilibrate with the receptor <b>(AGONIST-ANTAGONIST HEMI-EQUILIBRIA)</b>, then the Schild plot will be nonlinear with a slope < 1.0 at low antagonist concentrations.<br>",
+"<b>DAU-5884</b><br> has the highest affinity because it has the highest –logK<sub>i</sub> value at M<sub>1</sub> receptors (8.9). <br><b>Pirenzepine</b> is the most selective for M<sub>1</sub> receptors because it has the greatest difference in –logK<sub>i</sub> values for M<sub>1</sub> compared to any other receptor subtype (at least 0.8 log units different).",
+"<b>S-secoverine</b> has the highest affinity because it has the highest –logK<sub>i</sub> value at M<sub>2</sub> receptors (7.9). <br><br><b>DAU-5884</b> is the most selective for M<sub>2</sub> receptors because it has the greatest difference in –logK<sub>i</sub> values for M<sub>2</sub> compared to any other receptor subtype (at least 1.0 log units different).",
+"<b>DAU-5884</b> has the highest affinity because it has the highest –logK<sub>i</sub> value at M<sub>3</sub> receptors (8.9). <br><br><b>Darifenacin</b> is the most selective for M<sub>3</sub> receptors because it has the greatest difference in –logK<sub>i</sub> values for M<sub>3</sub> compared to any other receptor subtype (at least 0.8 log units different).",
+"<b>DAU-5884</b> has the highest affinity because it has the highest –logK<sub>i</sub> value at M<sub>4</sub> receptors (8.5). <br><br><b>MT-3</b> is the most selective for M<sub>4</sub> receptors because it has the greatest difference in –logK<sub>i</sub> values for M<sub>4</sub> compared to any other receptor subtype (at least 1.4 log units different).",
+"<b>DAU-5884</b> has the highest affinity because it has the highest –logK<sub>i</sub> value at M<sub>5</sub> receptors (8.1). <br><br><b>S-secoverine</b> is the most selective for M<sub>5</sub> receptors because it has the greatest difference in –logK<sub>i</sub> values for M<sub>5</sub> compared to any other receptor subtype (at least 1.2 log units different).",
 "<b>10<sup>-6</sup>M.</b>  The –logK<sub>i</sub> value of methoctramine for M<sub>3</sub> receptors is 6.0.  The K<sub>i</sub> value should be the same as the K<sub>A</sub> value (just measured using different experimental approaches), and the K<sub>A</sub> value is the concentration of ligand (antagonist in this case) that occupies 50% of receptors.  Thus, the antilog of -6.0 (i.e. 10<sup>-6</sup>) is the molar concentration of methoctramine that will occupy 50% of M<sub>3</sub> receptors.",
 "<b>10<sup>-7</sup>M.</b>  The –logK<sub>i</sub> value of methoctramine for M<sub>4</sub> receptors is 7.0.  The K<sub>i</sub> value should be the same as the K<sub>A</sub> value (just measured using different experimental approaches), and the K<sub>A</sub> value is the concentration of ligand (antagonist in this case) that occupies 50% of receptors.  Thus, the antilog of -7.0 (i.e. 10<sup>-7</sup>) is the molar concentration of methoctramine that will occupy 50% of M<sub>4</sub> receptors.",
 "<b>10<sup>-8</sup>M.</b>  The –logK<sub>i</sub> value of darifenacin for M<sub>5</sub> receptors is 8.0.  The K<sub>i</sub> value should be the same as the K<sub>A</sub> value (just measured using different experimental approaches), and the K<sub>A</sub> value is the concentration of ligand (antagonist in this case) that occupies 50% of receptors.  Thus, the antilog of -8.0 (i.e. 10<sup>-8</sup>) is the molar concentration of darifenacin that will occupy 50% of M<sub>5</sub> receptors.",
@@ -1137,14 +1155,4 @@ function restartQuestionSchild() {
     document.getElementById("restartQuestionSchild").style.display = "none";
     document.getElementById("schildQuestion").innerHTML = "<b>" + questionsSchild[questionCounterSchild] + "</b>";
     document.getElementById("revealSchildAnswer").style.display = "inline-block";
-}
-
-//Task 6
-//Addition information, more details about that particular type of Schild plot.
-var linear = []
-var nonlinear = []
-
-function whySchildPlotsNonidealFunction() {
-    document.getElementById("whySchildPlotsNonidealPage").innerHTML;
-    $('#whySchildPlotsNonidealModal').modal('show');
 }
